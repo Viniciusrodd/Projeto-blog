@@ -2,6 +2,7 @@
 const express = require('express')
 const app = express()
 const bodyparser = require('body-parser')
+const conection = require('./database/conection')
 
 
 //DIZENDO PARA O EXPRESS USAR O EJS COMO VIEWENGINE 
