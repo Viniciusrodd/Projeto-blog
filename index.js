@@ -18,11 +18,11 @@ app.use(bodyparser.json())
 
 
 app.get('/', (req, res) =>{
-    res.send('Bem vindo ao site')
+    res.render('index')
 })
 
 
 //ABRINDO SERVIDOR NA PORTA 1500
-app.listen(1500, () =>{
+app.listen(3500, () =>{
     console.log('blog rodando')
 })
