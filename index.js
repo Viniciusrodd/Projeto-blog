@@ -3,7 +3,8 @@ const express = require('express')
 const app = express()
 const bodyparser = require('body-parser')
 const conection = require('./database/conection')
-const controller = require('./categories/controller')
+const categoriesController = require('./categories/categoriesController')
+const articlesController = require('./articles/articleController')
 
 
 //DIZENDO PARA O EXPRESS USAR O EJS COMO VIEWENGINE 
@@ -35,7 +36,8 @@ conection.authenticate()
 
 
 //DIZENDO POR EXPRESS USAR MINHAS ROTAS DEFINIDAS PELO 'ROUTER' COM PREFIXO DE '/' SOMENTE
-app.use('/', controller)
+app.use('/', categoriesController)
+app.use('/', articlesController)
 
 
 //ABRINDO SERVIDOR NA PORTA 1500
