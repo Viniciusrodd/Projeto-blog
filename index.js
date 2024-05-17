@@ -5,6 +5,15 @@ const bodyparser = require('body-parser')
 const conection = require('./database/conection')
 
 
+conection.authenticate()
+    .then(() =>{
+        console.log('conexão feita com sucesso')
+    })
+    .catch((error) =>{
+        console.log(`erro ${error}`)
+    })
+
+
 //DIZENDO PARA O EXPRESS USAR O EJS COMO VIEWENGINE 
 app.set('view engine', 'ejs')
 
