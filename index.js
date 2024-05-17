@@ -3,15 +3,7 @@ const express = require('express')
 const app = express()
 const bodyparser = require('body-parser')
 const conection = require('./database/conection')
-
-
-conection.authenticate()
-    .then(() =>{
-        console.log('conexão feita com sucesso')
-    })
-    .catch((error) =>{
-        console.log(`erro ${error}`)
-    })
+const controller = require('./categories/controller')
 
 
 //DIZENDO PARA O EXPRESS USAR O EJS COMO VIEWENGINE 
@@ -30,6 +22,20 @@ app.use(bodyparser.json())
 app.get('/', (req, res) =>{
     res.render('index')
 })
+
+
+//AUTENTICANDO CONEXÃO COM BANCO DE DADOS
+conection.authenticate()
+    .then(() =>{
+        console.log('conexão feita com sucesso')
+    })
+    .catch((error) =>{
+        console.log(`erro ${error}`)
+    })
+
+
+//DIZENDO POR EXPRESS USAR MINHAS ROTAS DEFINIDAS PELO 'ROUTER' COM PREFIXO DE '/' SOMENTE
+app.use('/', controller)
 
 
 //ABRINDO SERVIDOR NA PORTA 1500
