@@ -3,8 +3,17 @@ const express = require('express')
 const app = express()
 const bodyparser = require('body-parser')
 const conection = require('./database/conection')
+
+//Importando nossos controllers(arquivos com os Routers)
 const categoriesController = require('./categories/categoriesController')
 const articlesController = require('./articles/articleController')
+
+//Impotando tabelas
+const articleModel = require('./articles/ArticleModel')
+const categoryModel = require('./categories/CategoryModel')
+
+//Importando relação entre tabelas de article e category
+const defineRelations = require('./relationships/relation1')
 
 
 //DIZENDO PARA O EXPRESS USAR O EJS COMO VIEWENGINE 
