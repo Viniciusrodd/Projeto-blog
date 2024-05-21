@@ -20,7 +20,7 @@ const defineRelations = require('./relationships/relation1')
 app.set('view engine', 'ejs')
 
 
-//USANDO ROTA PARA UTILIZAR ARQUIVOS ESTÁTICOS
+//DIZENDO PRO EXPRESS USAR ARQUIVOS ESTÁTICOS
 app.use(express.static('public'))
 
 
