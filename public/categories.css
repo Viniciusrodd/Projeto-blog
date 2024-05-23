@@ -20,7 +20,7 @@ html, body{
 
 header{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
     align-items: center;
     margin: 0px;
     background-color: green;
@@ -30,22 +30,69 @@ header{
 }
 
 h1{
+    font-size: 36px;
     margin-left: 10px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
 }
 
 h2{
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-decoration: overline;
 }
 
+button#categorias{
+    height: 45px;
+    width: 180px;
+    margin-bottom: 20px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}
+
 table{
-    width: 70%;
+    width: 65%;
     border-collapse: collapse;
 }
 
 th, td{
-    padding: 5px;
+    padding: 10px;
     border: 2px solid black;
     
+}
+
+.tds-center{
+    text-align: center;
+}
+
+button#editar{
+    height: 30px;
+    width: 70px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: orange;
+    color: white;
+    cursor: pointer;
+}
+
+button#deletar{
+    height: 30px;
+    width: 70px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: red;
+    color: white;
+    cursor: pointer;
 }

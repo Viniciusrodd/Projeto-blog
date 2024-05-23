@@ -19,6 +19,9 @@ html, body{
 }
 
 header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     margin: 0px;
     background-color: green;
     height: 15vh;
@@ -28,6 +31,14 @@ header{
 
 h1{
     margin-left: 20px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
 }
 
 #filho{

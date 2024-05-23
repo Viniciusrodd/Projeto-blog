@@ -30,7 +30,7 @@ app.use(bodyparser.json())
 
 
 app.get('/', (req, res) =>{
-    res.render('index')
+    res.render('admin/categories/index')
 })
 
 

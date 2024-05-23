@@ -8,11 +8,15 @@
 </head>
 <body>
     <header>
-        <h1>GuiaPress</h1>
+        <h1><a href="/">GuiaPress</a></h1>
+        <h3><a href="/admin/categories/new">Categories section</a></h3>
     </header>
 
     <div id="container">
         <h2>Categorias</h2>
+        <button id="categorias">
+            <a href="/admin/categories/new">Criar nova categoria</a>
+        </button>
         <table>
             <thead>
                 <tr>
@@ -25,10 +29,13 @@
             <tbody>
                 <% categories.forEach((categoriesDados) => { %>
                     <tr>
-                        <td><%= categoriesDados.id %></td>
+                        <td class="tds-center"><%= categoriesDados.id %></td>
                         <td><%= categoriesDados.title %></td>
                         <td><%= categoriesDados.slug %></td>
-                        <td></td>
+                        <td class="tds-center">
+                            <button id="editar">Editar</button>
+                            <button id="deletar">Deletar</button>
+                        </td>
                     </tr>
                 <% }) %>
             </tbody>
