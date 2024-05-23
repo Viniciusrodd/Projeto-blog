@@ -19,6 +19,9 @@ html, body{
 }
 
 header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     margin: 0px;
     background-color: green;
     height: 15vh;
@@ -27,22 +30,17 @@ header{
 }
 
 h1{
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
-#filho{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    height: 10vh;
-    width: 50%;
+h2{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-decoration: overline;
 }
 
 table{
-    height: 40vh;
-    width: 100%;
+    width: 70%;
     border-collapse: collapse;
 }
 
