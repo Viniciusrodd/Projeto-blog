@@ -5,9 +5,11 @@ const router = express.Router()
 const categoryModel = require('./CategoryModel')
 const slugify = require('slugify')
 
+
 router.get('/admin/categories/new', (req, res) =>{
     res.render('admin/categories/new')
 })
+
 
 router.post('/categories/save', (req, res) =>{
     var titleInput = req.body.title
@@ -24,5 +26,11 @@ router.post('/categories/save', (req, res) =>{
         res.redirect('admin/categories/new')
     }
 })
+
+
+router.get('/admin/categories', (req, res) =>{
+    res.render('admin/categories/categories')
+})
+
 
 module.exports = router
