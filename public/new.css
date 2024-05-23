@@ -69,10 +69,17 @@ input{
     height: 40px;
     width: 80%;
     border: 2px solid black;
+    outline: none; /* Remove o contorno padrão do navegador */
+    transition: box-shadow 0.3s ease; /* Transição suave para a sombra */
+    text-align: center;
 }
-
 ::placeholder{
+    text-align: left;
     font-size: 15px;
+}
+input:focus{
+    border: none;
+    box-shadow: 0 0 10px green;
 }
 
 button{
