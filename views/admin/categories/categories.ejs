@@ -23,12 +23,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Dev web</td>
-                    <td>dev-web</td>
-                    <td></td>
-                </tr>
+                <% categories.forEach((categoriesDados) => { %>
+                    <tr>
+                        <td><%= categoriesDados.id %></td>
+                        <td><%= categoriesDados.title %></td>
+                        <td><%= categoriesDados.slug %></td>
+                        <td></td>
+                    </tr>
+                <% }) %>
             </tbody>
         </table>
     </div>
