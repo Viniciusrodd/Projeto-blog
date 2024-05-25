@@ -23,7 +23,7 @@ header{
     justify-content: space-around;
     align-items: center;
     margin: 0px;
-    background-color: green;
+    background-color: lightcoral;
     height: 15vh;
     width: 100%;
     border-bottom: 3px solid black;
@@ -85,16 +85,15 @@ input{
     text-align: center;
 }
 ::placeholder{
-    text-align: left;
     font-size: 15px;
 }
 input:focus{
     border: none;
-    box-shadow: 0 0 10px green;
+    box-shadow: 0 0 10px lightcoral;
 }
 
 button{
-    background-color: green;
+    background-color: lightcoral;
     color: white;
     font-size: 15px;
     height: 40px;
