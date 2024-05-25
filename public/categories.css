@@ -68,11 +68,19 @@ table{
 th, td{
     padding: 10px;
     border: 2px solid black;
-    
 }
 
-.tds-center{
+#td-id{
     text-align: center;
+}
+
+#td-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    border-top: none;
+    border-left: none;
 }
 
 button#editar{

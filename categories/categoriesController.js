@@ -46,7 +46,7 @@ router.post('/categories/delete', (req, res) =>{
         if(!isNaN(idReq)){ //Verficando se o id é um algorismo numérico
             categoryModel.destroy({
                 where: {
-                    id: id
+                    id: idReq
                 }
             })
             .then(() =>{

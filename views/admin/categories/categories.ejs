@@ -29,12 +29,20 @@
             <tbody>
                 <% categories.forEach((categoriesDados) => { %>
                     <tr>
-                        <td class="tds-center"><%= categoriesDados.id %></td>
+                        <td id="td-id"><%= categoriesDados.id %></td>
                         <td><%= categoriesDados.title %></td>
                         <td><%= categoriesDados.slug %></td>
-                        <td class="tds-center">
-                            <button id="editar">Editar</button>
-                            <button id="deletar">Deletar</button>
+                        <td id="td-buttons">
+                            <button id="editar">
+                                Editar
+                            </button>
+                            <form method="post" action="/categories/delete">
+                                <input type="hidden" name="id" value="<%= categoriesDados.id %>"> <!--Carregando id de forma dinâmica-->
+                                    <button id="deletar">
+                                        Deletar
+                                    </button>
+                                </input>
+                            </form>
                         </td>
                     </tr>
                 <% }) %>
