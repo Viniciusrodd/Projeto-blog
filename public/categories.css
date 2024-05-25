@@ -74,13 +74,12 @@ th, td{
     text-align: center;
 }
 
+form{
+    display: inline;
+}
+
 #td-buttons{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     text-align: center;
-    border-top: none;
-    border-left: none;
 }
 
 button#editar{
@@ -92,6 +91,7 @@ button#editar{
     background-color: orange;
     color: white;
     cursor: pointer;
+    margin-right: 5px;
 }
 
 button#deletar{

@@ -33,15 +33,10 @@
                         <td><%= categoriesDados.title %></td>
                         <td><%= categoriesDados.slug %></td>
                         <td id="td-buttons">
-                            <button id="editar">
-                                Editar
-                            </button>
-                            <form method="post" action="/categories/delete">
+                            <button id="editar">Editar</button>
+                            <form method="post" action="/categories/delete" onsubmit="deletar(event, this)">
                                 <input type="hidden" name="id" value="<%= categoriesDados.id %>"> <!--Carregando id de forma dinâmica-->
-                                    <button id="deletar">
-                                        Deletar
-                                    </button>
-                                </input>
+                                <button id="deletar">Deletar</button>
                             </form>
                         </td>
                     </tr>
@@ -50,5 +45,17 @@
         </table>
     </div>
     
+
+    <!--SCRIPT PARA CONFIRMAÇÃO DE EXCLUSÃO DE CATEGORIA-->
+    <script>
+        function deletar(event, form) {
+            console.log('chamando função delete')
+            event.preventDefault()
+            var decision = confirm('Deseja deletar essa categoria ?')
+            if(decision){
+                form.submit()
+            }
+        }
+    </script>
 </body>
 </html>

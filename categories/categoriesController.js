@@ -1,16 +1,18 @@
 
-
+//IMPORTANDO DEPENDÊNCIAS
 const express = require('express')
 const router = express.Router()
 const categoryModel = require('./CategoryModel')
 const slugify = require('slugify')
 
 
+//ROTA DE INSERIR CATEGORIAS
 router.get('/admin/categories/new', (req, res) =>{
     res.render('admin/categories/new')
 })
 
 
+//ROTA APENAS PARA SALVAR DADOS ENVIADOS DE CATEGORIAS PRO BD
 router.post('/categories/save', (req, res) =>{
     var titleInput = req.body.title
 
@@ -20,7 +22,7 @@ router.post('/categories/save', (req, res) =>{
             slug: slugify(titleInput) //Gera um slug (uma versão URL-amigável do título) a partir do título e o define na nova categoria.
         }) 
         .then(() =>{
-            res.redirect('/')
+            res.redirect('/admin/categories')
         })
     }else{
         res.redirect('admin/categories/new')
