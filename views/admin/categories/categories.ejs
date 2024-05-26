@@ -36,7 +36,7 @@
                             <button id="editar">Editar</button>
                             <form method="post" action="/categories/delete" onsubmit="deletar(event, this)">
                                 <input type="hidden" name="id" value="<%= categoriesDados.id %>"> <!--Carregando id de forma dinâmica-->
-                                <button id="deletar">Deletar</button>
+                                <button id="deletar" type="submit">Deletar</button>
                             </form>
                         </td>
                     </tr>
@@ -49,11 +49,10 @@
     <!--SCRIPT PARA CONFIRMAÇÃO DE EXCLUSÃO DE CATEGORIA-->
     <script>
         function deletar(event, form) {
-            console.log('chamando função delete')
-            event.preventDefault()
-            var decision = confirm('Deseja deletar essa categoria ?')
-            if(decision){
-                form.submit()
+            event.preventDefault(); // Evita que o formulário seja enviado automaticamente
+            const confirmacao = confirm("Tem certeza que deseja excluir este dado?");
+            if (confirmacao) {
+                form.submit(); // Envia o formulário se o usuário confirmar
             }
         }
     </script>
