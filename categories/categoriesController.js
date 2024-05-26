@@ -18,7 +18,7 @@ router.get('/admin/categories/new', (req, res) =>{
 router.post('/categories/save', (req, res) =>{
     var titleInput = req.body.title
 
-    if(titleInput != undefined){
+    if(titleInput != ''){
         categoryModel.create({
             title: titleInput,
             slug: slugify(titleInput) //Gera um slug (uma versão URL-amigável do título) a partir do título e o define na nova categoria.
@@ -27,7 +27,7 @@ router.post('/categories/save', (req, res) =>{
             res.redirect('/admin/categories')
         })
     }else{
-        res.redirect('admin/categories/new')
+        res.redirect('/admin/categories/new')
     }
 })
 
