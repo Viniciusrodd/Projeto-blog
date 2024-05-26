@@ -6,10 +6,12 @@ const categoryModel = require('./CategoryModel')
 const slugify = require('slugify')
 
 
+
 //ROTA DE INSERIR CATEGORIAS
 router.get('/admin/categories/new', (req, res) =>{
     res.render('admin/categories/new')
 })
+
 
 
 //ROTA APENAS PARA SALVAR DADOS ENVIADOS DE CATEGORIAS PRO BD
@@ -30,6 +32,8 @@ router.post('/categories/save', (req, res) =>{
 })
 
 
+
+//ROTA DE VISIBILIDADE DE CATEGORIAS
 router.get('/admin/categories', (req, res) =>{
     categoryModel.findAll()
         .then((dadosCategories) =>{
@@ -40,6 +44,8 @@ router.get('/admin/categories', (req, res) =>{
 })
 
 
+
+//ROTA VOLTADA PARA DELETAR DADOS DE CATEGORIAS
 router.post('/categories/delete', (req, res) =>{
     var idReq = req.body.id
 
@@ -62,5 +68,6 @@ router.post('/categories/delete', (req, res) =>{
         res.redirect('/admin/categories')
     }
 })
+
 
 module.exports = router
