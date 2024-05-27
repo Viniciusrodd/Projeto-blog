@@ -34,9 +34,9 @@
                         <td><%= categoriesDados.slug %></td>
                         <td id="td-buttons">
                             <button id="editar">Editar</button>
-                            <form method="post" action="/categories/delete" onsubmit="deletar(event, this)">
+                            <form method="post" action="/categories/delete" class="delete-form">
                                 <input type="hidden" name="id" value="<%= categoriesDados.id %>"> <!--Carregando id de forma dinâmica-->
-                                <button id="deletar" type="submit">Deletar</button>
+                                <button class="deletar" type="submit">Deletar</button>
                             </form>
                         </td>
                     </tr>
@@ -48,13 +48,15 @@
 
     <!--SCRIPT PARA CONFIRMAÇÃO DE EXCLUSÃO DE CATEGORIA-->
     <script>
-        function deletar(event, form) {
-            event.preventDefault(); // Evita que o formulário seja enviado automaticamente
-            const confirmacao = confirm("Tem certeza que deseja excluir este dado?");
-            if (confirmacao) {
-                form.submit(); // Envia o formulário se o usuário confirmar
-            }
-        }
+        var deleteForm = document.querySelectorAll('.delete-form')
+            deleteForm.forEach(form => {
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault(); // Evita que o formulário seja enviado automaticamente
+                    if (confirm('Tem certeza que deseja excluir este dado?')) {
+                        this.submit(); // Envia o formulário se o usuário confirmar
+                    }
+                });
+            });
     </script>
 </body>
 </html>

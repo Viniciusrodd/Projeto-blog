@@ -94,7 +94,7 @@ button#editar{
     margin-right: 5px;
 }
 
-button#deletar{
+button.deletar{
     height: 30px;
     width: 70px;
     border: none;
