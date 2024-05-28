@@ -14,14 +14,15 @@ router.get('/admin/categories/new', (req, res) =>{
 
 
 
+//CRUD (CREATE)
 //ROTA APENAS PARA SALVAR DADOS ENVIADOS DE CATEGORIAS PRO BD
 router.post('/categories/save', (req, res) =>{
-    var titleInput = req.body.title
+    var titleVar = req.body.title
 
-    if(titleInput != ''){
+    if(titleVar != ''){
         categoryModel.create({
-            title: titleInput,
-            slug: slugify(titleInput) //Gera um slug (uma versão URL-amigável do título) a partir do título e o define na nova categoria.
+            title: titleVar,
+            slug: slugify(titleVar) //Gera um slug (uma versão URL-amigável do título) a partir do título e o define na nova categoria.
         }) 
         .then(() =>{
             res.redirect('/admin/categories')
@@ -33,6 +34,7 @@ router.post('/categories/save', (req, res) =>{
 
 
 
+//CRUD (READ)
 //ROTA DE VISIBILIDADE DE CATEGORIAS
 router.get('/admin/categories', (req, res) =>{
     categoryModel.findAll()
@@ -45,33 +47,8 @@ router.get('/admin/categories', (req, res) =>{
 
 
 
-//ROTA VOLTADA PARA DELETAR DADOS DE CATEGORIAS
-router.post('/categories/delete', (req, res) =>{
-    var idVar = req.body.id
-
-    if(idVar != undefined){ //Verificando se id for diferente de nulo
-
-        if(!isNaN(idReq)){ //Verficando se o id é um algorismo numérico
-            categoryModel.destroy({
-                where: {
-                    id: idVar
-                }
-            })
-            .then(() =>{
-                res.redirect('/admin/categories')
-            })
-        }else{
-            res.redirect('/admin/categories')
-        }
-        
-    }else{
-        res.redirect('/admin/categories')
-    }
-})
-
-
-
-//ROTA VOLTADA PARA EDITAR DADOS DE CATEGORIAS
+//CRUD (UPDATE/READ)
+//ROTA VOLTADA PARA EDITAR DADOS DE CATEGORIAS VISUALMENTE
 router.get('/admin/categories/edit/:id', (req, res) =>{
     var idVar = req.params.id
 
@@ -98,6 +75,7 @@ router.get('/admin/categories/edit/:id', (req, res) =>{
 
 
 
+//CRUD (UPDATE)
 //ROTA VOLTADA PARA ATUALIZAR DADOS EDITADOS
 router.post('/categories/update', (req, res) =>{
     var idVar = req.body.id
@@ -112,6 +90,34 @@ router.post('/categories/update', (req, res) =>{
         res.redirect('/admin/categories')
     })
 })
+
+
+
+//CRUD (DELETE)
+//ROTA VOLTADA PARA DELETAR DADOS DE CATEGORIAS
+router.post('/categories/delete', (req, res) =>{
+    var idVar = req.body.id
+
+    if(idVar != undefined){ //Verificando se id for diferente de nulo
+
+        if(!isNaN(idVar)){ //Verficando se o id é um algorismo numérico
+            categoryModel.destroy({
+                where: {
+                    id: idVar
+                }
+            })
+            .then(() =>{
+                res.redirect('/admin/categories')
+            })
+        }else{
+            res.redirect('/admin/categories')
+        }
+        
+    }else{
+        res.redirect('/admin/categories')
+    }
+})
+
 
 
 module.exports = router
