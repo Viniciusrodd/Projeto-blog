@@ -70,4 +70,25 @@ router.post('/categories/delete', (req, res) =>{
 })
 
 
+
+//ROTA VOLTADA PARA EDITAR DADOS DE CATEGORIAS
+router.get('/admin/categories/edit/:id', (req, res) =>{
+    var idVar = req.params.id
+
+    categoryModel.findByPk(idVar) //método de procura especifico para IDs e mais rápido
+        .then((dadoCategoria) =>{
+
+            if(dadoCategoria != undefined){
+
+            } else{
+                res.redirect('/admin/categories')
+            }
+            
+        })
+        .catch((erro) =>{
+            res.redirect('/admin/categories')
+        })
+})
+
+
 module.exports = router
