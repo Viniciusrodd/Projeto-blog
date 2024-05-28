@@ -75,8 +75,14 @@ h2{
     margin: 0px;
 }
 
-input{
+h3{
     margin-top: 20px;
+    margin-bottom: 5px;
+    text-decoration: underline;
+}
+
+input{
+    margin-top: 5px;
     height: 40px;
     width: 80%;
     border: 2px solid black;

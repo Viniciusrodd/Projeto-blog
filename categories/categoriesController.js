@@ -49,10 +49,6 @@ router.get('/admin/categories', (req, res) =>{
 router.post('/categories/delete', (req, res) =>{
     var idReq = req.body.id
 
-    if(isNaN(idReq)){
-        res.redirect('/admin/categories')
-    }
-
     if(idReq != undefined){ //Verificando se id for diferente de nulo
 
         if(!isNaN(idReq)){ //Verficando se o id é um algorismo numérico
@@ -78,6 +74,10 @@ router.post('/categories/delete', (req, res) =>{
 //ROTA VOLTADA PARA EDITAR DADOS DE CATEGORIAS
 router.get('/admin/categories/edit/:id', (req, res) =>{
     var idVar = req.params.id
+
+    if(isNaN(idVar)){
+        res.redirect('/admin/categories')
+    }
 
     categoryModel.findByPk(idVar) //método de procura especifico para IDs (ache pelos IDs) e mais rápido
         .then((dadosCategoria) =>{
