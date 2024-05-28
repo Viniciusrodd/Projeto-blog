@@ -47,14 +47,14 @@ router.get('/admin/categories', (req, res) =>{
 
 //ROTA VOLTADA PARA DELETAR DADOS DE CATEGORIAS
 router.post('/categories/delete', (req, res) =>{
-    var idReq = req.body.id
+    var idVar = req.body.id
 
-    if(idReq != undefined){ //Verificando se id for diferente de nulo
+    if(idVar != undefined){ //Verificando se id for diferente de nulo
 
         if(!isNaN(idReq)){ //Verficando se o id é um algorismo numérico
             categoryModel.destroy({
                 where: {
-                    id: idReq
+                    id: idVar
                 }
             })
             .then(() =>{
@@ -94,6 +94,23 @@ router.get('/admin/categories/edit/:id', (req, res) =>{
         .catch((erro) =>{
             res.redirect('/admin/categories')
         })
+})
+
+
+
+//ROTA VOLTADA PARA ATUALIZAR DADOS EDITADOS
+router.post('/categories/update', (req, res) =>{
+    var idVar = req.body.id
+    var titleVar = req.body.title
+
+    categoryModel.update({title: titleVar},{ //Passando com sequelize OQUE eu quero Atualizar
+        where: { //Passando com sequelize AONDE eu quero Atualizar
+            id: idVar
+        }
+    })
+    .then(() =>{
+        res.redirect('/admin/categories')
+    })
 })
 
 

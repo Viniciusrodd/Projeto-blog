@@ -9,7 +9,7 @@
 <body>
     <header>
         <h1><a href="/">GuiaPress</a></h1>
-        <h3><a href="/admin/categories/new">Categories section</a></h3>
+        <h2><a href="/admin/categories/new">Categories section</a></h2>
     </header>
 
     <div id="container">
@@ -33,9 +33,11 @@
                         <td><%= categoriesDados.title %></td>
                         <td><%= categoriesDados.slug %></td>
                         <td id="td-buttons">
-                            <form action="/admin/categories/edit/<%= categoriesDados.id %>">
+                            
+                            <a href="/admin/categories/edit/<%= categoriesDados.id %>">
                                 <button id="editar">Editar</button>
-                            </form>
+                            </a>
+                            
                             <form method="post" action="/categories/delete" class="delete-form">
                                 <input type="hidden" name="id" value="<%= categoriesDados.id %>"> <!--Carregando id de forma dinâmica-->
                                 <button class="deletar" type="submit">Deletar</button>
