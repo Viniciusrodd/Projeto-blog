@@ -103,7 +103,7 @@ router.post('/categories/update', (req, res) =>{
     var idVar = req.body.id
     var titleVar = req.body.title
 
-    categoryModel.update({title: titleVar},{ //Passando com sequelize OQUE eu quero Atualizar
+    categoryModel.update({title: titleVar, slug: slugify(titleVar)},{ //Passando com sequelize OQUE eu quero Atualizar
         where: { //Passando com sequelize AONDE eu quero Atualizar
             id: idVar
         }

@@ -14,12 +14,14 @@
         </header>
 
         <div id="filho">
-            <form method="post" action="/categories/save">
+            <form method="post" action="/categories/update">
                 <div id="header-form">
                     <h2>Edição de categoria</h2>
                 </div>
                 <h3><%= categoria.title %>:</h3>
                 <input type="text" name="title" placeholder="Definina a edição da categoria acima"> <br>
+                <input type="hidden" name="id" value="<%= categoria.id %>">
+                <input type="hidden" name="slug" value="<%= categoria.slug %>">
                 <button>Atualizar</button>
             </form>
         </div>
