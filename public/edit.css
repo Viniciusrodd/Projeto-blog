@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+*{
+    font-family: sans-serif;
+}
+
+html, body{
+    margin: 0px;
+    padding: 0px;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0px;
+    background-color: red;
+    height: 15vh;
+    width: 100%;
+    border-bottom: 3px solid black;
+}
+
+h1{
+    margin-left: 20px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+#filho{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 30px;
+    height: 40vh;
+    width: 70%;
+    border: 3px solid black;
+}
+
+form{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+
+#header-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    background-color: rgb(219, 219, 219);
+    border-bottom: 2px solid black;
+}
+
+h2{
+    margin: 0px;
+}
+
+input{
+    margin-top: 20px;
+    height: 40px;
+    width: 80%;
+    border: 2px solid black;
+    outline: none; /* Remove o contorno padrão do navegador */
+    transition: box-shadow 0.3s ease; /* Transição suave para a sombra */
+    text-align: center;
+}
+::placeholder{
+    font-size: 15px;
+}
+input:focus{
+    border: none;
+    box-shadow: 0 0 10px red;
+}
+
+button{
+    background-color: red;
+    color: white;
+    font-size: 15px;
+    height: 40px;
+    width: 100px;
+    border: none;
+    cursor: pointer;
+}

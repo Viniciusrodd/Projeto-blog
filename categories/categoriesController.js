@@ -9,7 +9,7 @@ const slugify = require('slugify')
 
 //ROTA DE INSERIR CATEGORIAS
 router.get('/admin/categories/new', (req, res) =>{
-    res.render('admin/categories/new')
+    res.render('admin/categoriesEjs/new')
 })
 
 
@@ -37,7 +37,7 @@ router.post('/categories/save', (req, res) =>{
 router.get('/admin/categories', (req, res) =>{
     categoryModel.findAll()
         .then((dadosCategories) =>{
-            res.render('admin/categories/categories', {
+            res.render('admin/categoriesEjs/categories', {
                 categories: dadosCategories
             })
         })
@@ -76,14 +76,16 @@ router.get('/admin/categories/edit/:id', (req, res) =>{
     var idVar = req.params.id
 
     categoryModel.findByPk(idVar) //método de procura especifico para IDs e mais rápido
-        .then((dadoCategoria) =>{
+        .then((dadosCategoria) =>{
 
-            if(dadoCategoria != undefined){
-
+            if(dadosCategoria != undefined){
+                res.render('admin/categoriesEjs/edit', {
+                    categoria: dadosCategoria
+                })
             } else{
                 res.redirect('/admin/categories')
             }
-            
+
         })
         .catch((erro) =>{
             res.redirect('/admin/categories')

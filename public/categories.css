@@ -23,7 +23,7 @@ header{
     justify-content: space-around;
     align-items: center;
     margin: 0px;
-    background-color: lightcoral;
+    background-color: orange;
     height: 15vh;
     width: 100%;
     border-bottom: 3px solid black;
@@ -55,7 +55,7 @@ button#categorias{
     border: none;
     font-size: 16px;
     font-weight: bold;
-    background-color: lightcoral;
+    background-color: orange;
     color: white;
     cursor: pointer;
 }

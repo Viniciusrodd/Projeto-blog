@@ -44,7 +44,7 @@ app.use(bodyparser.json())
 
 //ROTA PRINCIPAL
 app.get('/', (req, res) =>{
-    res.render('admin/categories/index')
+    res.render('admin/categoriesEjs/index')
 })
 
 
