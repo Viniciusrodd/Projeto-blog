@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/articlesCss/newArticle.css">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1><a href="/">GuiaPress</a></h1>
+            <h2><a href="/admin/categories">Categories table</a></h2>
+        </header>
+
+        <div id="filho">
+            <form method="post" action="/categories/save">
+                <div id="header-form">
+                    <h2>Novo Artigo</h2>
+                </div>
+                <input type="text" name="title" placeholder="Definina novo Artigo"> <br>
+                <textarea name="bodyArticle" placeholder="Escreva o artigo aqui"></textarea>
+                <button>Cadastrar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
