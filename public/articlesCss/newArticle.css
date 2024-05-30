@@ -14,7 +14,7 @@ html, body{
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 100vh;
+    height: auto;
     width: 100%;
 }
 
@@ -47,7 +47,8 @@ a:hover{
     justify-content: flex-start;
     align-items: center;
     margin-top: 30px;
-    height: 60%;
+    margin-bottom: 50px;
+    height: auto;
     width: 70%;
     border: 3px solid black;
 }
@@ -57,7 +58,7 @@ form{
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    height: auto;
     width: 100%;
 }
 
@@ -93,22 +94,14 @@ input:focus{
     box-shadow: 0 0 10px lightcoral;
 }
 
-textarea{
-    margin-bottom: 20px;
-    height: 120px;
-    width: 80%;
-    border: 3px solid black;
-    outline: none; /* Remove o contorno padrão do navegador */
-    transition: box-shadow 0.3s ease; /* Transição suave para a sombra */
-    text-align: center;
-}
-
 button{
     background-color: lightcoral;
     color: white;
     font-size: 15px;
     height: 40px;
     width: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     border: none;
     cursor: pointer;
 }
