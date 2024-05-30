@@ -22,7 +22,17 @@
                     <h2>Novo Artigo</h2>
                 </div>
                 <input type="text" name="title" placeholder="Definina novo Artigo"> <br>
-                <textarea name="bodyArticle" placeholder="Escreva o artigo aqui" id="articleTextarea"></textarea>
+                <textarea name="bodyArticle" placeholder="Escreva o artigo aqui" id="articleTextarea">
+
+                </textarea>
+
+                <label for="category">Categoria</label>
+                <select name="category" id="categoryID">
+                    <% dadosCategory.forEach((dados) =>{ %>
+                        <option><%= dados.title %></option>
+                    <% }) %>
+                </select>
+
                 <button>Cadastrar</button>
             </form>
         </div>
