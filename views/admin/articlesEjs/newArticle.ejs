@@ -11,8 +11,8 @@
         <header>
             <h1><a href="/">GuiaPress</a></h1>
             <div>
-                <h2><a href="/admin/categories">Categories table</a></h2>
-                <h2><a href="/admin/categories/new">Categories insert</a></h2>
+                <h3><a href="/admin/categories">Categories table</a></h3>
+                <h3><a href="/admin/categories/new">Categories insert</a></h3>
             </div>
         </header>
 
@@ -31,7 +31,23 @@
     <script src="/tinymce/tinymce.min.js"></script>
     <script>
         tinymce.init({
-            selector: '#articleTextarea'
+            selector: '#articleTextarea', 
+            plugins:[
+                'advlist',
+                'autolink',
+                'link',
+                'image',
+                'lists',
+                'preview',
+                'searchreplace',
+                'wordcount',
+                'fullscreen',
+                'insertdatetime',
+                'media',
+                'save',
+                'table',
+                'emoticons'
+            ]
         })
     </script>
 </body>
