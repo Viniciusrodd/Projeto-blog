@@ -9,7 +9,7 @@ const slugify = require('slugify')
 
 
 //ROTA DE ARTIGO
-router.get('/article', (req, res) =>{
+router.get('/admin/article', (req, res) =>{
     res.send('rotas de artigo')
 })
 
@@ -27,20 +27,23 @@ router.get('/admin/article/new', (req, res) =>{
 
 
 
-//ROTA PARA SALVAR ARTIGOS NO BANCO DE DADOS
+//ROTA PARA SALVAR ARTIGOS E CATEGORIAS NO BANCO DE DADOS COM RELAÇÃO ENTRE TABELAS
 router.post('/articles/save', (req, res) =>{
     var titleVar = req.body.title
     var bodyVar = req.body.bodyArticle
-    var categoryId = req.body.category
+    var categoryVar = req.body.category
 
     articleModel.create({
         title: titleVar,
         slug: slugify(titleVar),
         body: bodyVar,
-        id: categoryId
+        categoryId: categoryVar
     })
     .then(() =>{
-        res.redirect('/admin/categories')
+        res.redirect('/admin/article')
     })
 })
+
+
+
 module.exports = router
