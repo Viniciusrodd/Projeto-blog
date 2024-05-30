@@ -7,7 +7,7 @@ router.get('/article', (req, res) =>{
     res.send('rotas de artigo')
 })
 
-router.get('/adm/article/new', (req, res) =>{
+router.get('/admin/article/new', (req, res) =>{
     res.render('admin/articlesEjs/newArticle')
 })
 
