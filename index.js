@@ -21,6 +21,16 @@ const categoryModel = require('./categories/CategoryModel')
 
 //IMPORTANDO RELAÇÕES ENTRE TABELAS DE ARTICLE E CATEGORY
 const defineRelations = require('./relationships/relation1')
+//DEFININDO RELAÇÕES
+defineRelations()
+//SINCRONIZANDO AS TABELAS COM BANCO DE DADOS
+conection.sync({force: true})
+    .then(() =>{
+        console.log('Database sincronizado')
+    })
+    .catch((error) =>{
+        console.log('Erro de sincronização')
+    })
 
 
 
