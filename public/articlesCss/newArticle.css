@@ -94,7 +94,26 @@ input:focus{
     box-shadow: 0 0 10px lightcoral;
 }
 
+label{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+}
 
+select{
+    height: 40px;
+    width: 80%;
+    border: 2px solid black;
+    outline: none; /* Remove o contorno padrão do navegador */
+    transition: box-shadow 0.3s ease; /* Transição suave para a sombra */
+    text-align: center;
+}
+
+option{
+    font-size: 16px;
+}
 
 button{
     background-color: lightcoral;
