@@ -23,7 +23,7 @@ header{
     justify-content: space-around;
     align-items: center;
     margin: 0px;
-    background-color: lightcoral;
+    background-color: orange;
     height: 15vh;
     width: 100%;
     border-bottom: 3px solid black;
@@ -71,7 +71,7 @@ form{
     border-bottom: 2px solid black;
 }
 
-h2{
+h3{
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -90,11 +90,11 @@ input{
 }
 input:focus{
     border: none;
-    box-shadow: 0 0 10px lightcoral;
+    box-shadow: 0 0 10px orange;
 }
 
 button{
-    background-color: lightcoral;
+    background-color: orange;
     color: white;
     font-size: 15px;
     height: 40px;

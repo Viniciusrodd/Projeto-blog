@@ -23,7 +23,7 @@ header{
     justify-content: space-around;
     align-items: center;
     margin: 0px;
-    background-color: red;
+    background-color: orange;
     height: 15vh;
     width: 100%;
     border-bottom: 3px solid black;
@@ -95,11 +95,11 @@ input{
 }
 input:focus{
     border: none;
-    box-shadow: 0 0 10px red;
+    box-shadow: 0 0 10px orange;
 }
 
 button{
-    background-color: red;
+    background-color: orange;
     color: white;
     font-size: 15px;
     height: 40px;

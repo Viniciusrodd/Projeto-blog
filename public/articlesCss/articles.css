@@ -23,7 +23,7 @@ header{
     justify-content: space-around;
     align-items: center;
     margin: 0px;
-    background-color: orange;
+    background-color: lightcoral;
     height: 15vh;
     width: 100%;
     border-bottom: 3px solid black;
@@ -42,7 +42,7 @@ a:hover{
     text-decoration: underline;
 }
 
-h3{
+h2{
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -54,7 +54,7 @@ button#categorias{
     border: none;
     font-size: 16px;
     font-weight: bold;
-    background-color: orange;
+    background-color: lightcoral;
     color: white;
     cursor: pointer;
 }
@@ -87,7 +87,7 @@ button#editar{
     border: none;
     font-size: 16px;
     font-weight: bold;
-    background-color: orange;
+    background-color: lightcoral;
     color: white;
     cursor: pointer;
     margin-right: 5px;

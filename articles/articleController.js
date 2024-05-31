@@ -10,7 +10,7 @@ const slugify = require('slugify')
 
 //ROTA DE ARTIGO
 router.get('/admin/article', (req, res) =>{
-    res.send('rotas de artigo')
+    res.render('admin/articlesEjs/articles')
 })
 
 

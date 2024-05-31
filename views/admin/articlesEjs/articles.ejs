@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categories</title>
-    <link rel="stylesheet" href="/categoriesCss/categories.css">
+    <link rel="stylesheet" href="/articlesCss/articles.css">
 </head>
 <body>
     <header>
@@ -12,43 +12,25 @@
         <div>
             <h3><a href="/admin/categories/new">Categories insert</a></h3>
             <h3><a href="/admin/article/new">Articles insert</a></h3>
-            <h3><a href="/admin/article">Article table</a></h3>
         </div>
     </header>
 
     <div id="container">
-        <h2>Categorias</h2>
+        <h2>Artigos</h2>
         <button id="categorias">
-            <a href="/admin/categories/new">Criar nova categoria</a>
+            <a href="/admin/categories/new">Criar novo artigo</a>
         </button>
         <table>
             <thead>
                 <tr>
                     <th>Id</th>
                     <th>Titulo</th>
-                    <th>Slug</th>
+                    <th>Categoria</th>
                     <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
-                <% categories.forEach((categoriesDados) => { %>
-                    <tr>
-                        <td id="td-id"><%= categoriesDados.id %></td>
-                        <td><%= categoriesDados.title %></td>
-                        <td><%= categoriesDados.slug %></td>
-                        <td id="td-buttons">
-                            
-                            <a href="/admin/categories/edit/<%= categoriesDados.id %>">
-                                <button id="editar">Editar</button>
-                            </a>
-                            
-                            <form method="post" action="/categories/delete" class="delete-form">
-                                <input type="hidden" name="id" value="<%= categoriesDados.id %>"> <!--Carregando id de forma dinâmica-->
-                                <button class="deletar" type="submit">Deletar</button>
-                            </form>
-                        </td>
-                    </tr>
-                <% }) %>
+                
             </tbody>
         </table>
     </div>
