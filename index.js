@@ -24,7 +24,7 @@ const defineRelations = require('./relationships/relation1')
 //DEFININDO RELAÇÕES
 defineRelations()
 //SINCRONIZANDO AS TABELAS COM BANCO DE DADOS
-conection.sync({force: true})
+conection.sync({force: false})
     .then(() =>{
         console.log('Database sincronizado')
     })
