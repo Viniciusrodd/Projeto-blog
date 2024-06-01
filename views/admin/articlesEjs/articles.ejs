@@ -37,7 +37,9 @@
                         <td><%= dados.id %></td>
                         <td><%= dados.title %></td>
                         <td><%= dados.slug %></td>
-                        <td><%= dados.categoryId %></td>
+                        <!--Uso do método include no findAll()-->
+                        <!--Usei 'category' porque é esse nome que dei na minha relação entre tabelas-->
+                        <td><%= dados.category.title %></td> 
                         <td>Ações</td>
                     </tr>
                 <% }) %>

@@ -10,7 +10,13 @@ const slugify = require('slugify')
 
 //ROTA DE CRIAÇÃO DE ARTIGO E EXIBIÇÃO DE DADOS DE ARTIGOS (READ)
 router.get('/admin/article', (req, res) =>{
-    articleModel.findAll()
+    articleModel.findAll({
+        //Especificando associações (joins) com 'include: [{}]'
+        //Isso é feito para mostrar dados de outra tabela(categoryModel) lá no ejs
+        include: [{
+            model: categoryModel
+        }]
+    })
         .then((ArticlesData) =>{
             res.render('admin/articlesEjs/articles', {
                 dadosArticle: ArticlesData
