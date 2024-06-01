@@ -19,7 +19,7 @@
     <div id="container">
         <h2>Artigos</h2>
         <button id="categorias">
-            <a href="/admin/categories/new">Criar novo artigo</a>
+            <a href="/admin/article/new">Criar novo artigo</a>
         </button>
         <table>
             <thead>
@@ -38,9 +38,14 @@
                         <td><%= dados.title %></td>
                         <td><%= dados.slug %></td>
                         <!--Uso do método include no findAll()-->
-                        <!--Usei 'category' porque é esse nome que dei na minha relação entre tabelas-->
+                        <!--Usei 'category' porque é esse nome que dei pra essa tabela na minha relação entre elas-->
                         <td><%= dados.category.title %></td> 
-                        <td>Ações</td>
+                        <td>
+                            <form action="/admin/article/delete" method="post">
+                                <input type="hidden" name="id" value="<%= dados.id %>">
+                                <button class="deletar">Deletar</button>
+                            </form>
+                        </td>
                     </tr>
                 <% }) %>
             </tbody>

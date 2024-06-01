@@ -57,4 +57,20 @@ router.post('/articles/save', (req, res) =>{
 
 
 
+//ROTA DE DELETAR ARTIGOS
+router.post('/admin/article/delete', (req, res) =>{
+    var Idvar = req.body.id
+
+    articleModel.destroy({
+        where: {
+            id: Idvar
+        }
+    })
+    .then(() =>{
+        res.redirect('/admin/article')
+    })
+})
+
+
+
 module.exports = router
