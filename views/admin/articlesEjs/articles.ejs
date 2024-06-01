@@ -41,9 +41,9 @@
                         <!--Usei 'category' porque é esse nome que dei pra essa tabela na minha relação entre elas-->
                         <td><%= dados.category.title %></td> 
                         <td>
-                            <form action="/admin/article/delete" method="post">
+                            <form action="/admin/article/delete" method="post" class="delete-form">
                                 <input type="hidden" name="id" value="<%= dados.id %>">
-                                <button class="deletar">Deletar</button>
+                                <button class="deletar" type="submit">Deletar</button>
                             </form>
                         </td>
                     </tr>
@@ -51,5 +51,17 @@
             </tbody>
         </table>
     </div>
+
+    <script>
+        var deleteForm = document.querySelectorAll('.delete-form')
+            deleteForm.forEach((form) => {
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault(); // Evita que o formulário seja enviado automaticamente
+                    if (confirm('Tem certeza que deseja excluir este dado?')) {
+                        this.submit(); // Envia o formulário se o usuário confirmar
+                    }
+                });
+            });
+    </script>
 </body>
 </html>
