@@ -8,14 +8,19 @@ const slugify = require('slugify')
 
 
 
-//ROTA DE ARTIGO
+//ROTA DE CRIAÇÃO DE ARTIGO E EXIBIÇÃO DE DADOS DE ARTIGOS (READ)
 router.get('/admin/article', (req, res) =>{
-    res.render('admin/articlesEjs/articles')
+    articleModel.findAll()
+        .then((ArticlesData) =>{
+            res.render('admin/articlesEjs/articles', {
+                dadosArticle: ArticlesData
+            })
+        })
 })
 
 
 
-//ROTA DE CRIAÇÃO DE ARTIGO E EXIBIÇÃO DE CATEGORIAS (READ)
+//ROTA DE CRIAÇÃO DE ARTIGO E EXIBIÇÃO DE DADOS DE CATEGORIAS (READ)
 router.get('/admin/article/new', (req, res) =>{
     categoryModel.findAll()
         .then((categoryData) =>{

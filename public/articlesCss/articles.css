@@ -42,9 +42,8 @@ a:hover{
     text-decoration: underline;
 }
 
-h2{
-    margin-top: 5px;
-    margin-bottom: 5px;
+h3{
+    margin: 5px;
 }
 
 button#categorias{

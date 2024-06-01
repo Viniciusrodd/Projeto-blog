@@ -10,6 +10,7 @@
     <header>
         <h1><a href="/">GuiaPress</a></h1>
         <div>
+            <h3><a href="/admin/categories">Categories table</a></h3>
             <h3><a href="/admin/categories/new">Categories insert</a></h3>
             <h3><a href="/admin/article/new">Articles insert</a></h3>
         </div>
@@ -25,28 +26,23 @@
                 <tr>
                     <th>Id</th>
                     <th>Titulo</th>
+                    <th>slug</th>
                     <th>Categoria</th>
                     <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
-                
+                <% dadosArticle.forEach((dados) =>{ %>
+                    <tr>
+                        <td><%= dados.id %></td>
+                        <td><%= dados.title %></td>
+                        <td><%= dados.slug %></td>
+                        <td><%= dados.categoryId %></td>
+                        <td>Ações</td>
+                    </tr>
+                <% }) %>
             </tbody>
         </table>
     </div>
-    
-
-    <!--SCRIPT PARA CONFIRMAÇÃO DE EXCLUSÃO DE CATEGORIA-->
-    <script>
-        var deleteForm = document.querySelectorAll('.delete-form')
-            deleteForm.forEach(form => {
-                form.addEventListener('submit', function(event) {
-                    event.preventDefault(); // Evita que o formulário seja enviado automaticamente
-                    if (confirm('Tem certeza que deseja excluir este dado?')) {
-                        this.submit(); // Envia o formulário se o usuário confirmar
-                    }
-                });
-            });
-    </script>
 </body>
 </html>
