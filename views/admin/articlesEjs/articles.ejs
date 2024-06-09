@@ -34,17 +34,19 @@
             <tbody>
                 <% dadosArticle.forEach((dados) =>{ %>
                     <tr>
-                        <td><%= dados.id %></td>
+                        <td id="td-id"><%= dados.id %></td>
                         <td><%= dados.title %></td>
                         <td><%= dados.slug %></td>
                         <!--Uso do método include no findAll()-->
                         <!--Usei 'category' porque é esse nome que dei pra essa tabela na minha relação entre elas-->
                         <td><%= dados.category.title %></td> 
-                        <td>
+                        <td id="td-buttons">
                             <form action="/admin/article/delete" method="post" class="delete-form">
                                 <input type="hidden" name="id" value="<%= dados.id %>">
                                 <button class="deletar" type="submit">Deletar</button>
                             </form>
+
+                            <button id="editar">Editar</button>
                         </td>
                     </tr>
                 <% }) %>
@@ -55,10 +57,10 @@
     <script>
         var deleteForm = document.querySelectorAll('.delete-form')
             deleteForm.forEach((form) => {
-                form.addEventListener('submit', function(event) {
+                form.addEventListener('submit', (event) => {
                     event.preventDefault(); // Evita que o formulário seja enviado automaticamente
                     if (confirm('Tem certeza que deseja excluir este dado?')) {
-                        this.submit(); // Envia o formulário se o usuário confirmar
+                        form.submit(); // Envia o formulário se o usuário confirmar
                     }
                 });
             });
