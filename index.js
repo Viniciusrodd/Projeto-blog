@@ -54,7 +54,13 @@ app.use(bodyparser.json())
 
 //ROTA PRINCIPAL
 app.get('/', (req, res) =>{
-    res.render('admin/categoriesEjs/index')
+    articleModel.findAll()
+        .then((articlesData) =>{
+            res.render('admin/categoriesEjs/index', {
+                dadosArticle: articlesData
+            })
+        })
+
 })
 
 
