@@ -23,19 +23,27 @@
             <h2>Este é um simples blog</h2>
             <hr>
             <h3>Descrição detalhada aqui:</h3>
-            <button>Leia mais</button>
+            <button>
+                Leia mais
+            </button>
         </div>
 
         <hr>
 
-        <div class="artigos">
 
-        </div>
-        <!--
         <% dadosArticle.forEach((dados) =>{ %>
-            <h2><%= dados.title %></h2>
+            <div class="articles">
+                <p class="article-title">
+                    <%= dados.title %>
+                </p>
+
+                <hr>
+
+                <button id="btt-article">
+                    Ler Artigo
+                </button>
+            </div>
         <% }) %>
-        -->
     </div>
 </body>
 </html>
