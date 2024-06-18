@@ -21,6 +21,7 @@ const categoryModel = require('./categories/CategoryModel')
 
 //IMPORTANDO RELAÇÕES ENTRE TABELAS DE ARTICLE E CATEGORY
 const defineRelations = require('./relationships/relation1')
+const { where } = require('sequelize')
 //DEFININDO RELAÇÕES
 defineRelations()
 //SINCRONIZANDO AS TABELAS COM BANCO DE DADOS
@@ -80,6 +81,23 @@ conection.authenticate()
 app.use('/', categoriesController)
 app.use('/', articlesController)
 
+
+app.get('/:slug', (req, res) =>{
+    var slugReq = req.params.slug
+
+    articleModel.findOne({
+        where: {
+            slug: slugReq
+        }
+    })
+    .then((article) =>{
+        if(article != undefined){
+            res.render('')
+        }else{
+            res.redirect('/')
+        }
+    })
+})
 
 
 //ABRINDO SERVIDOR NA PORTA 1500

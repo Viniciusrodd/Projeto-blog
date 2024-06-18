@@ -72,11 +72,15 @@ h3{
 
 button{
     padding: 13px;
-    background-color: greenyellow;
+    background-color: yellowgreen;
     font-size: 17px;
     font-weight: bolder;
     color: black;
     border: none;
+    cursor: pointer;
+}
+button:hover{
+    background-color: greenyellow;
 }
 
 div.articles{
@@ -96,9 +100,17 @@ p.article-title{
 button#btt-article{
     margin-top: 20px;
     padding: 13px;
-    background-color: greenyellow;
+    background-color: yellowgreen;
     font-size: 17px;
     font-weight: bolder;
     color: black;
     border: none;
+    cursor: pointer;
+}
+#btt-article:hover{
+    background-color: greenyellow;
+}
+
+a{
+    text-decoration: none;
 }
