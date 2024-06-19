@@ -82,6 +82,8 @@ app.use('/', categoriesController)
 app.use('/', articlesController)
 
 
+
+//ROTA PARA PEGAR SLUG
 app.get('/:slug', (req, res) =>{
     var slugReq = req.params.slug
 
@@ -90,14 +92,17 @@ app.get('/:slug', (req, res) =>{
             slug: slugReq
         }
     })
-    .then((article) =>{
-        if(article != undefined){
-            res.render('')
+    .then((articleSlug) =>{
+        if(articleSlug != undefined){
+            res.render('admin/articlesEjs/articleRead', {
+                articleSlug: articleSlug
+            })
         }else{
             res.redirect('/')
         }
     })
 })
+
 
 
 //ABRINDO SERVIDOR NA PORTA 1500

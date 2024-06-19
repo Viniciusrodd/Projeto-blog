@@ -43,6 +43,8 @@ a:hover{
 }
 
 h3.h3-header{
+    font-size: 19px;
+    font-weight: bold;
     margin: 5px;
     color: black;
 }
