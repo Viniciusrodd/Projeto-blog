@@ -64,12 +64,17 @@ form{
 
 #header-form{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 10vh;
+    height: auto;
     width: 100%;
     background-color: rgb(219, 219, 219);
     border-bottom: 2px solid black;
+}
+
+h2{
+    margin: 8px;
 }
 
 h3{
