@@ -73,4 +73,11 @@ router.post('/admin/article/delete', (req, res) =>{
 
 
 
+//ROTA PARA EDITAR ARTIGO
+router.get('/admin/article/edit', (req, res) =>{
+    res.redirect('')
+})
+
+
+
 module.exports = router
