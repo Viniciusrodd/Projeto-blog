@@ -53,19 +53,6 @@ app.use(bodyparser.json())
 
 
 
-//ROTA PRINCIPAL
-app.get('/', (req, res) =>{
-    articleModel.findAll()
-        .then((articlesData) =>{
-            res.render('admin/categoriesEjs/index', {
-                dadosArticle: articlesData
-            })
-        })
-
-})
-
-
-
 //AUTENTICANDO CONEXÃO COM BANCO DE DADOS
 conection.authenticate()
     .then(() =>{
@@ -80,6 +67,23 @@ conection.authenticate()
 //DIZENDO POR EXPRESS USAR MINHAS ROTAS DEFINIDAS PELO 'ROUTER' COM PREFIXO DE '/' SOMENTE
 app.use('/', categoriesController)
 app.use('/', articlesController)
+
+
+
+//ROTA PRINCIPAL
+app.get('/', (req, res) =>{
+    articleModel.findAll({
+        order: [
+            ['id', 'DESC']
+        ]
+    })
+        .then((articlesData) =>{
+            res.render('admin/categoriesEjs/index', {
+                dadosArticle: articlesData
+            })
+        })
+
+})
 
 
 
