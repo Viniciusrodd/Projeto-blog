@@ -73,9 +73,44 @@ router.post('/admin/article/delete', (req, res) =>{
 
 
 
+//ROTA VOLTADA PARA EDITAR DADOS DE ARTIGO VISUALMENTE
+router.get('/admin/article/edit/:id', (req, res) =>{
+    var varId = req.params.id
+
+    articleModel.findByPk(varId)
+        .then((dadosArticle) =>{
+            res.render('admin/articlesEjs/articleEdit',{
+                artigoDados: dadosArticle
+            })
+        })
+        .catch((err) =>{
+            res.redirect('/admin/article')
+        })
+})
+
+
+
 //ROTA PARA EDITAR ARTIGO
-router.get('/admin/article/edit', (req, res) =>{
-    res.redirect('')
+router.post('/admin/article/edit', (req, res) =>{
+    var idVar = req.body.id
+    var bodyVar = req.body.body
+    var titleVar = req.body.title
+
+    articleModel.update(
+        {
+            title: titleVar,
+            slug: slugify(titleVar),
+            body:bodyVar
+        },
+        {
+            where:{
+                id: idVar
+            }
+        }
+    )
+    .then(() =>{
+        res.redirect('/admin/article')
+    })
 })
 
 

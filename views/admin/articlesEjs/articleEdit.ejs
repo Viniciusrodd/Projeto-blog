@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/articlesCss/articleEdit.css">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1><a href="/">GuiaPress</a></h1>
+            <div>
+                <h3><a href="/admin/categories">Categories table</a></h3>
+                <h3><a href="/admin/categories/new">Categories insert</a></h3>
+                <h3><a href="/admin/article">Article table</a></h3>
+            </div>
+        </header>
+
+        <div id="filho">
+            <form method="post" action="/articles/save">
+                <div id="header-form">
+                    <h2>Edição de Artigo:</h2> <br>
+                    <h2><%= artigoDados.title %></h2>
+                </div>
+                <input type="text" name="title" placeholder="Definina novo Titulo de artigo"> <br>
+                
+                <textarea name="bodyArticle" placeholder="Escreva o artigo aqui" id="articleTextarea">
+
+                </textarea>
+
+                <button>Editar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/tinymce/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            language: 'pt_BR',
+            selector: '#articleTextarea', 
+            plugins:[
+                'advlist',
+                'autolink',
+                'link',
+                'image',
+                'lists',
+                'preview',
+                'searchreplace',
+                'wordcount',
+                'fullscreen',
+                'insertdatetime',
+                'media',
+                'save',
+                'table',
+                'emoticons'
+            ],
+        })
+    </script>
+</body>
+</html>
