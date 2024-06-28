@@ -36,7 +36,12 @@
         </div>
     </div>
 
+    <div id="content" style="display: none;">
+        <%- artigoDados.body %> <!--USEI '-' PORQUE ASSIM CARREGA IMAGEM-->
+    </div>
+
     <script src="/tinymce/tinymce.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script>
         tinymce.init({
             language: 'pt_BR',
@@ -57,6 +62,10 @@
                 'table',
                 'emoticons'
             ],
+
+            init_instance_callback: () =>{
+                tinymce.get('articleTextarea').setContent($('#content').html())
+            }
         })
     </script>
 </body>
