@@ -12,4 +12,12 @@ router.get('/admin/users/create', (req, res) =>{
 })
 
 
+//ROTA PRA PEGAR DADOS
+router.post('/admin/users/created', (req, res) =>{
+    var idVar = req.body.id
+    var senhaVar = req.body.senha
+
+    res.json({idVar, senhaVar})
+})
+
 module.exports = router
