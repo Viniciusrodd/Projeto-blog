@@ -10,12 +10,14 @@ const conection = require('./database/conection')
 //IMPORTANDO NOSSOS CONTROLLERS(ARQUIVOS COM ROUTER)
 const categoriesController = require('./categories/categoriesController')
 const articlesController = require('./articles/articleController')
+const userController = require('./user/userController')
 
 
 
 //IMPORTANDO TABELAS
 const articleModel = require('./articles/ArticleModel')
 const categoryModel = require('./categories/CategoryModel')
+const userModel = require('./user/userModel')
 
 
 
@@ -67,6 +69,7 @@ conection.authenticate()
 //DIZENDO POR EXPRESS USAR MINHAS ROTAS DEFINIDAS PELO 'ROUTER' COM PREFIXO DE '/' SOMENTE
 app.use('/', categoriesController)
 app.use('/', articlesController)
+app.use('/', userController)
 
 
 
