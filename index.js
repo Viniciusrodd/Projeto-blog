@@ -26,6 +26,8 @@ const defineRelations = require('./relationships/relation1')
 const { where } = require('sequelize')
 //DEFININDO RELAÇÕES
 defineRelations()
+
+
 //SINCRONIZANDO AS TABELAS COM BANCO DE DADOS
 conection.sync({force: false})
     .then(() =>{
