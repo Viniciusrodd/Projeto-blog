@@ -21,9 +21,19 @@ router.get('/admin/users/create', (req, res) =>{
 //ROTA PRA PEGAR DADOS
 router.post('/admin/users/created', (req, res) =>{
     var emailVar = req.body.email
-    var senhaVar = req.body.senha
+    var passwordVar = req.body.senha
 
-    res.json({emailVar, senhaVar})
+    //definindo nosso hash de senha
+    var salt = bcrypt.genSaltSync(10)
+    var hash = bcrypt.hashSync(passwordVar, salt)
+
+    userModel.create({
+        email: emailVar,
+        senha: hash
+    })
+    .then(() =>{
+        res.redirect('/')
+    })
 })
 
 
