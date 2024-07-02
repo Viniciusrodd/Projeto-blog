@@ -18,21 +18,32 @@ router.get('/admin/users/create', (req, res) =>{
 })
 
 
-//ROTA PRA PEGAR DADOS
+//ROTA PRA PEGAR DADOS DA CRIAÇÃO DOS USERS
 router.post('/admin/users/created', (req, res) =>{
     var emailVar = req.body.email
     var passwordVar = req.body.senha
 
-    //definindo nosso hash de senha
-    var salt = bcrypt.genSaltSync(10)
-    var hash = bcrypt.hashSync(passwordVar, salt)
-
-    userModel.create({
-        email: emailVar,
-        senha: hash
+    userModel.findOne({
+        where: {
+            email: emailVar
+        }
     })
-    .then(() =>{
-        res.redirect('/')
+    .then((userDados) =>{
+        if(userDados == undefined){
+            //definindo nosso hash de senha
+            var salt = bcrypt.genSaltSync(10)
+            var hash = bcrypt.hashSync(passwordVar, salt)
+
+            userModel.create({
+                email: emailVar,
+                senha: hash
+            })
+            .then(() =>{
+                res.redirect('/')
+            })
+        }else{
+            res.redirect('/admin/users/created')
+        }
     })
 })
 
