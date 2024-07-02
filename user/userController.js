@@ -8,7 +8,12 @@ const bcrypt = require('bcryptjs')
 
 //ROTA DE LISTAGEM DE USERS
 router.get('/admin/users', (req, res) =>{
-    res.send('listagem de usuarios')
+    userModel.findAll()
+        .then((usersDados) =>{
+            res.render('admin/usersEjs/users', {
+                dadosUsers: usersDados
+            })
+        })
 })
 
 
