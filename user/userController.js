@@ -1,12 +1,18 @@
 
+//INSTALANDO AS DEPENDÊNCIAS
 const express = require('express')
 const router = express.Router()
 const userModel = require('./userModel')
+const bcrypt = require('bcryptjs')
 
+
+//ROTA DE LISTAGEM DE USERS
 router.get('/admin/users', (req, res) =>{
     res.send('listagem de usuarios')
 })
 
+
+//ROTA DE CRIAÇÃO DE USERS
 router.get('/admin/users/create', (req, res) =>{
     res.render('admin/usersEjs/create')
 })
@@ -19,5 +25,7 @@ router.post('/admin/users/created', (req, res) =>{
 
     res.json({emailVar, senhaVar})
 })
+
+
 
 module.exports = router
