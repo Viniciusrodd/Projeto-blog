@@ -7,12 +7,36 @@
     <link rel="stylesheet" href="/usersCss/users.css">
 </head>
 <body>
-    <h1>Bem vindo a página de listagem de users</h1>
+    <header>
+        <h1><a href="/">GuiaPress</a></h1>
+        <div>
+            <h3><a href="/admin/categories/new">Categories insert</a></h3>
+            <h3><a href="/admin/article/new">Articles insert</a></h3>
+            <h3><a href="/admin/article">Article table</a></h3>
+        </div>
+    </header>
 
-    <% dadosUsers.forEach((dados) =>{ %>
-        <p>Id:<%= dados.id %></p>
-        <p>Email:<%= dados.email %></p>
-        <p>Senha Hash:<%= dados.senha %></p>
-    <% }) %>
+    <div id="container">
+        <h2>Usuários</h2>
+        <button id="categorias">
+            Criar novo usuário
+        </button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% dadosUsers.forEach((dados) => { %>
+                    <tr>
+                        <td id="td-id"><%= dados.id %></td>
+                        <td><%= dados.email %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
