@@ -4,6 +4,18 @@ const express = require('express')
 const app = express()
 const bodyparser = require('body-parser')
 const conection = require('./database/conection')
+const session = require('express-session')
+
+
+
+//USANDO NOSSO SESSION PARA ARMAZENAR SESSÕES DE USERS
+app.use(session({
+    secret: 'TextoQualquerQueOExpressPedePraAuamentarSegurançaDasSessões',
+    cookie: {
+        //tempo máximo de expiração de sessão após inatividade de user
+        maxAge: 30000
+    }
+}))
 
 
 
