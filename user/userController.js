@@ -57,9 +57,43 @@ router.post('/admin/users/created', (req, res) =>{
 
 
 
+//ROTA PARA LOGIN DE USERS
 router.get('/login', (req, res) =>{
     res.render('admin/usersEjs/login')
 })
+
+
+
+//ROTA DE AUTENTICAÇÃO
+router.post('/authenticate', (req, res) =>{
+    var emailVar = req.body.email
+    var passwordVar = req.body.senha
+
+    userModel.findOne({
+        where: {
+            email: emailVar
+        }
+    })
+    .then((dadosPegos) =>{
+        if(dadosPegos != undefined){ //verificação pra ver se existe user com esse email
+            //validar senha com Bcrypt
+            var correct = bcrypt.compareSync(passwordVar, dadosPegos.senha) //senha do user comparada a do BD
+                if(correct){
+                    //criando sessão
+                    req.session.user = {
+                        id: dadosPegos.id,
+                        email: dadosPegos.email
+                    }
+                    res.json(req.session.user)
+                }else{
+                    res.redirect('/login')                
+                }
+        }else{
+            res.redirect('/login')
+        }
+    })
+})
+
 
 
 module.exports = router
