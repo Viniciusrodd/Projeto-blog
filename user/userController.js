@@ -57,4 +57,9 @@ router.post('/admin/users/created', (req, res) =>{
 
 
 
+router.get('/login', (req, res) =>{
+    res.render('admin/usersEjs/login')
+})
+
+
 module.exports = router
