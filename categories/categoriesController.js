@@ -4,11 +4,12 @@ const express = require('express')
 const router = express.Router()
 const categoryModel = require('./CategoryModel')
 const slugify = require('slugify')
+const adminAuth = require('../middlewares/adminAuth')
 
 
 
 //ROTA DE INSERIR CATEGORIAS
-router.get('/admin/categories/new', (req, res) =>{
+router.get('/admin/categories/new', adminAuth, (req, res) =>{
     res.render('admin/categoriesEjs/new')
 })
 
@@ -36,7 +37,7 @@ router.post('/categories/save', (req, res) =>{
 
 //CRUD (READ)
 //ROTA DE VISIBILIDADE DE CATEGORIAS
-router.get('/admin/categories', (req, res) =>{
+router.get('/admin/categories', adminAuth, (req, res) =>{
     categoryModel.findAll()
         .then((dadosCategories) =>{
             res.render('admin/categoriesEjs/categories', {
@@ -49,7 +50,7 @@ router.get('/admin/categories', (req, res) =>{
 
 //CRUD (UPDATE/READ)
 //ROTA VOLTADA PARA EDITAR DADOS DE CATEGORIAS VISUALMENTE
-router.get('/admin/categories/edit/:id', (req, res) =>{
+router.get('/admin/categories/edit/:id', adminAuth, (req, res) =>{
     var idVar = req.params.id
 
     if(isNaN(idVar)){

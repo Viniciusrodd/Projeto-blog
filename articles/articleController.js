@@ -75,7 +75,7 @@ router.post('/admin/article/delete', (req, res) =>{
 
 
 //ROTA VOLTADA PARA EDITAR DADOS DE ARTIGO VISUALMENTE
-router.get('/admin/article/edit/:id', (req, res) =>{
+router.get('/admin/article/edit/:id', adminAuth, (req, res) =>{
     var varId = req.params.id
 
     articleModel.findByPk(varId)
@@ -92,7 +92,7 @@ router.get('/admin/article/edit/:id', (req, res) =>{
 
 
 //ROTA PARA EDITAR ARTIGO
-router.post('/admin/article/edit', (req, res) =>{
+router.post('/admin/article/edit', adminAuth, (req, res) =>{
     var idVar = req.body.id
     var bodyVar = req.body.body
     var titleVar = req.body.title

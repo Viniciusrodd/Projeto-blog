@@ -39,7 +39,7 @@ router.post('/admin/users/created', (req, res) =>{
                 res.redirect('/')
             })
         }else{
-            res.redirect('/admin/users/created')
+            res.redirect('/admin/users/create')
         }
     })
 })
@@ -85,7 +85,7 @@ router.post('/authenticate', (req, res) =>{
                         id: dadosPegos.id,
                         email: dadosPegos.email
                     }
-                    res.json(req.session.user)
+                    res.redirect('/admin/article')
                 }else{
                     res.redirect('/login')                
                 }
