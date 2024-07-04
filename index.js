@@ -5,6 +5,7 @@ const app = express()
 const bodyparser = require('body-parser')
 const conection = require('./database/conection')
 const session = require('express-session')
+const adminAuth = require('./middlewares/adminAuth')
 
 
 
@@ -13,7 +14,7 @@ app.use(session({
     secret: 'TextoQualquerQueOExpressPedePraAuamentarSegurançaDasSessões',
     cookie: {
         //tempo máximo de expiração de sessão após inatividade de user
-        maxAge: 30000
+        maxAge: 30000000
     }
 }))
 

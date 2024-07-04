@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+*{
+    font-family: sans-serif;
+}
+
+html, body{
+    margin: 0px;
+    padding: 0px;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0px;
+    background-color: rgb(111, 113, 224);
+    height: 15vh;
+    width: 100%;
+    border-bottom: 3px solid black;
+}
+
+h1#guiapress{
+    font-size: 36px;
+    margin-left: 10px;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+
+h3.h3-header{
+    font-size: 19px;
+    font-weight: bold;
+    margin: 5px;
+    color: black;
+}
+
+#boas-vindas{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 70vw;
+    border: none;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    padding: 50px;
+    background-color: rgb(191, 206, 220);
+}
+
+#h1-boas-vindas{
+    margin: 0px 0px 20px 0px;
+    font-size: 40px;
+    font-family: sans-serif;
+}
+
+input{
+    height: 40px;
+    width: 80%;
+    margin-bottom: 20px;
+    border: none;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+input::placeholder{
+    color: rgba(0, 0, 0, 0.29);
+}
+
+h2{
+    margin-bottom: 30px;
+}
+
+h3{
+    margin-top: 30px;
+}
+
+button{
+    height: 40px;
+    width: 30%;
+    background-color: rgb(111, 113, 224);
+    font-size: 17px;
+    font-weight: bolder;
+    color: black;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+button:hover{
+    background-color: rgb(142, 143, 208);
+    text-decoration: none;
+}
+
+div.articles{
+    width: 80vw;
+    padding: 25px;
+    margin-top: 30px;
+    border: 3px solid black;
+    background-color: aliceblue;
+}
+
+p.article-title{
+    margin: 0px;
+    font-size: 30px;
+    color: black;
+    font-weight: bolder;
+}
+
+button#btt-article{
+    margin-top: 20px;
+    padding: 13px;
+    background-color: rgb(111, 113, 224);
+    font-size: 17px;
+    font-weight: bolder;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+#btt-article:hover{
+    background-color: rgb(142, 143, 208);
+}
+
+a{
+    text-decoration: none;
+}

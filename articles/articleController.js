@@ -5,11 +5,12 @@ const router = express.Router()
 const categoryModel = require('../categories/CategoryModel')
 const articleModel = require('./ArticleModel')
 const slugify = require('slugify')
+const adminAuth = require('../middlewares/adminAuth')
 
 
 
 //ROTA DE CRIAÇÃO DE ARTIGO E EXIBIÇÃO DE DADOS DE ARTIGOS (READ)
-router.get('/admin/article', (req, res) =>{
+router.get('/admin/article', adminAuth, (req, res) =>{
     articleModel.findAll({
         //Especificando associações (joins) com 'include: [{}]'
         //Isso é feito para mostrar dados de outra tabela(categoryModel) lá no ejs
@@ -27,7 +28,7 @@ router.get('/admin/article', (req, res) =>{
 
 
 //ROTA DE CRIAÇÃO DE ARTIGO E EXIBIÇÃO DE DADOS DE CATEGORIAS (READ)
-router.get('/admin/article/new', (req, res) =>{
+router.get('/admin/article/new', adminAuth, (req, res) =>{
     categoryModel.findAll()
         .then((categoryData) =>{
             res.render('admin/articlesEjs/newArticle', {

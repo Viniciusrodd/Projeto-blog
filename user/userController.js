@@ -7,18 +7,6 @@ const bcrypt = require('bcryptjs')
 
 
 
-//ROTA DE LISTAGEM DE USERS
-router.get('/admin/users', (req, res) =>{
-    userModel.findAll()
-        .then((usersDados) =>{
-            res.render('admin/usersEjs/users', {
-                dadosUsers: usersDados
-            })
-        })
-})
-
-
-
 //ROTA DE CRIAÇÃO DE USERS
 router.get('/admin/users/create', (req, res) =>{
     res.render('admin/usersEjs/create')
@@ -26,11 +14,12 @@ router.get('/admin/users/create', (req, res) =>{
 
 
 
-//ROTA PRA PEGAR DADOS DA CRIAÇÃO DOS USERS
+//ROTA PRA SALVAR EMAIL E SENHA HASHADA NO BD
 router.post('/admin/users/created', (req, res) =>{
     var emailVar = req.body.email
     var passwordVar = req.body.senha
 
+    //verificando se ja não existe email igual no bd
     userModel.findOne({
         where: {
             email: emailVar
@@ -53,6 +42,18 @@ router.post('/admin/users/created', (req, res) =>{
             res.redirect('/admin/users/created')
         }
     })
+})
+
+
+
+//ROTA DE LISTAGEM DE USERS //READ
+router.get('/admin/users', (req, res) =>{
+    userModel.findAll()
+        .then((usersDados) =>{
+            res.render('admin/usersEjs/users', {
+                dadosUsers: usersDados
+            })
+        })
 })
 
 
