@@ -29,6 +29,13 @@ header{
     border-bottom: 3px solid black;
 }
 
+div#div-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 50%;
+}
+
 h1{
     font-size: 36px;
     margin-left: 10px;
