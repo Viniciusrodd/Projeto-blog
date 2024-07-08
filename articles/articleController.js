@@ -28,7 +28,7 @@ router.get('/admin/article', adminAuth, (req, res) =>{
 
 
 //ROTA DE CRIAÇÃO DE ARTIGO E EXIBIÇÃO DE DADOS DE CATEGORIAS (READ)
-router.get('/admin/article/new', adminAuth, (req, res) =>{
+router.get('/admin/article/new', (req, res) =>{
     categoryModel.findAll()
         .then((categoryData) =>{
             res.render('admin/articlesEjs/newArticle', {

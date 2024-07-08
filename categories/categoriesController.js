@@ -9,7 +9,7 @@ const adminAuth = require('../middlewares/adminAuth')
 
 
 //ROTA DE INSERIR CATEGORIAS
-router.get('/admin/categories/new', adminAuth, (req, res) =>{
+router.get('/admin/categories/new', (req, res) =>{
     res.render('admin/categoriesEjs/new')
 })
 
