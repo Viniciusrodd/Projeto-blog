@@ -1,0 +1,5 @@
+
+
+#pastas para ignorar
+database/
+node_modules/
