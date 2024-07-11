@@ -10,7 +10,6 @@
     <header>
         <h1 id="guiapress"><a href="/">GuiaPress</a></h1>
         <div>
-            <h3 class="h3-header"><a href="/admin/categories">Categories table</a></h3>
             <h3 class="h3-header"><a href="/admin/categories/new">Categories insert</a></h3>
             <h3 class="h3-header"><a href="/admin/article/new">Articles insert</a></h3>
         </div>
@@ -19,8 +18,8 @@
     <div id="container">
     
         <div id="boas-vindas">
-            <h1 id="h1-boas-vindas">Bem-vindo/a á descrição do artigo:</h1>
-            <h2>Artigo: <%= articleSlug.title %></h2>
+            <h1 id="h1-boas-vindas">Esta é a descrição do artigo:</h1>
+            <h2><%= articleSlug.title %></h2>
 
             <hr>
             
@@ -29,7 +28,7 @@
             COM QUE O EJS EXIBA O CONTEÚDO DELA FORMATADO-->
 
             <button>
-                <a href="#">Leia mais</a>
+                <a href="/login">Editar</a>
             </button>
         </div>
     </div>
