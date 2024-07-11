@@ -52,7 +52,7 @@ router.post('/articles/save', (req, res) =>{
         categoryId: categoryVar
     })
     .then(() =>{
-        res.redirect('/admin/article')
+        res.redirect('/')
     })
 })
 

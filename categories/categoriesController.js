@@ -26,7 +26,7 @@ router.post('/categories/save', (req, res) =>{
             slug: slugify(titleVar) //Gera um slug (uma versão URL-amigável do título) a partir do título e o define na nova categoria.
         }) 
         .then(() =>{
-            res.redirect('/admin/categories')
+            res.redirect('/admin/article/new')
         })
     }else{
         res.redirect('/admin/categories/new')
