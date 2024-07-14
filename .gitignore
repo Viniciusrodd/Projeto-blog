@@ -3,6 +3,8 @@
 #pastas para ignorar
 database/
 node_modules/
+
+#arquivos para ignorar
 ArticleModel.js
 CategoryModel.js
 index.js
